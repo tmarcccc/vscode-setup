@@ -42,4 +42,27 @@
 14. Installing gunicorn for WSGI HTTP server: pip install gunicorn
 15. Starting the Server:  gunicorn -w 5 -b 0.0.0.0:5000 app:app
 16. Website should now be reachable
-17. Setting up Ngix: 
+18. Exit Venv: deactivate
+19. Setting up Ngix:
+20. Installing Ngix: sudo apt install nginx -y
+21. Editing the Congfig: sudo nano /etc/nginx/sites-available/flask_app
+22.   Pasting Config:
+```
+server {
+    listen 80;
+    server_name your-domain.com;  # Replace with your actual domain or server IP
+
+    location / {
+        proxy_pass http://127.0.0.1:5000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    error_log /var/log/nginx/flask_app_error.log;
+    access_log /var/log/nginx/flask_app_access.log;
+}
+```
+22. näch
+23. oka<
