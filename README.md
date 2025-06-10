@@ -1,7 +1,7 @@
 # vscode-setup
 
 1. installing git from https://git-scm.com/
-2. checking (vs code needs restart) with:  git --version
+2. checking (vs code needs restart) with:  `git --version`
 3. creating a folder for the project
 4. git cloning the contents: git clone <-->
 5. Configuring git: git config --global user.name "YourName"
@@ -25,7 +25,7 @@
 
 
 
-#Python Flask install
+# Python Flask install
 1. Installing Required Packages: sudo apt install -y python3 python3-pip python3-venv git
 2. sudo apt install python3.12-venv
 3. Changing to opt: cd /opt
