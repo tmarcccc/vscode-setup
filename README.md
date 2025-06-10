@@ -1,9 +1,7 @@
 # vscode-setup
 
 1. installing git from https://git-scm.com/
-2. checking (vs code needs restart) with:  ```
-   git --version
-                                ```
+2. checking (vs code needs restart) with:  `git --version`
 4. creating a folder for the project
 5. git cloning the contents: git clone <-->
 6. Configuring git: git config --global user.name "YourName"
