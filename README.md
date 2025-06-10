@@ -85,4 +85,7 @@ ExecStart=/opt/flask_app/venv/bin/gunicorn --workers 4 --bind 127.0.0.1:5000 app
 [Install]
 WantedBy=multi-user.target
 ```
-
+28. sudo systemctl start flask_app
+29. sudo systemctl enable flask_app
+30. Check Status: sudo systemctl status flask_app
+31. Acces Website with IP or Domain to test.
