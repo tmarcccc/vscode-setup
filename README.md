@@ -30,6 +30,16 @@
 2. sudo apt install python3.12-venv
 3. Changing to opt: cd /opt
 4. Creating the WebApp folder: sudo mkdir flask_app
-5. Moving the Flask app files in this directory so the app.py is there.
-6. Starting the Virtual Enviroment: sudo python3 -m venv venv
-7. Starting the Virtual Enviroment: source venv/bin/activate
+5. Setting up Premissions: sudo chown -R marc:marc /opt/flask_app
+6. Moving the Flask app files in this directory so the app.py is there.
+7. Starting the Virtual Enviroment: sudo python3 -m venv venv
+8. Starting the Virtual Enviroment: source venv/bin/activate
+9. If requirements.txt is avaliable: pip install -r requirements.txt
+10. if it was not in requirements.txt: pip install flask
+11. Checking which packeges are installed: pip list
+12. Testing if the Webserver starts: python app.py
+13. Stay in the (venv)
+14. Installing gunicorn for WSGI HTTP server: pip install gunicorn
+15. Starting the Server:  gunicorn -w 5 -b 0.0.0.0:5000 app:app
+16. Website should now be reachable
+17. Setting up Ngix: 
