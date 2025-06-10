@@ -64,5 +64,25 @@ server {
     access_log /var/log/nginx/flask_app_access.log;
 }
 ```
-22. näch
-23. oka<
+22. sudo ln -s /etc/nginx/sites-available/flask_app /etc/nginx/sites-enabled/
+23. Testing Config: sudo nginx -t
+24. sudo systemctl restart nginx
+25. Use Systemd to Run Gunicorn
+26. Opeing another Config: sudo nano /etc/systemd/system/flask_app.service
+27. Pasting This:
+```
+[Unit]
+Description=Gunicorn instance to serve Flask application
+After=network.target
+
+[Service]
+User=marc
+Group=www-data
+WorkingDirectory=/opt/flask_app
+Environment="PATH=/opt/flask_app/venv/bin"
+ExecStart=/opt/flask_app/venv/bin/gunicorn --workers 4 --bind 127.0.0.1:5000 app:app
+
+[Install]
+WantedBy=multi-user.target
+```
+
