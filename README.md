@@ -89,3 +89,4 @@ WantedBy=multi-user.target
 29. sudo systemctl enable flask_app
 30. Check Status: sudo systemctl status flask_app
 31. Acces Website with IP or Domain to test.
+32. Finally using Certbot for https
