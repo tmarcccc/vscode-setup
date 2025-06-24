@@ -19,9 +19,10 @@
 4. Entering Postgresql:  sudo -u postgres psql
 5. Create User:   CREATE USER marc WITH PASSWORD 'mypassword';
 6. ALTER USER marc WITH SUPERUSER;
-7. Creating the Database:
-8. ...
-9. Exiting Postgres Prompt: \q
+7. Creating the Database:  CREATE DATABASE main_db;
+8. Adding permissions for DB:  GRANT ALL PRIVILEGES ON DATABASE main_db TO marc;
+9. ...
+10. Exiting Postgres Prompt: \q
 
 
 
