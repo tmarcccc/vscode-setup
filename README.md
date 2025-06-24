@@ -21,8 +21,10 @@
 6. ALTER USER marc WITH SUPERUSER;
 7. Creating the Database:  CREATE DATABASE main_db;
 8. Adding permissions for DB:  GRANT ALL PRIVILEGES ON DATABASE main_db TO marc;
-9. ...
-10. Exiting Postgres Prompt: \q
+9. Change to the Database to use commands: \c main_db;
+10. Checking whats in a Database: SELECT * FROM db_name;
+11. ...
+12. Exiting Postgres Prompt: \q
 
 
 
@@ -32,22 +34,25 @@
 3. Changing to opt: cd /opt
 4. Creating the WebApp folder: sudo mkdir flask_app
 5. Setting up Premissions: sudo chown -R marc:marc /opt/flask_app
-6. Moving the Flask app files in this directory so the app.py is there.
-7. Starting the Virtual Enviroment: sudo python3 -m venv venv
-8. Starting the Virtual Enviroment: source venv/bin/activate
-9. If requirements.txt is avaliable: pip install -r requirements.txt
-10. if it was not in requirements.txt: pip install flask
-11. Checking which packeges are installed: pip list
-12. Testing if the Webserver starts: python app.py
-13. Stay in the (venv)
-14. Installing gunicorn for WSGI HTTP server: pip install gunicorn
-15. Starting the Server:  gunicorn -w 5 -b 0.0.0.0:5000 app:app
-16. Website should now be reachable
-18. Exit Venv: deactivate
-19. Setting up Ngix:
-20. Installing Ngix: sudo apt install nginx -y
-21. Editing the Congfig: sudo nano /etc/nginx/sites-available/flask_app
-22.   Pasting Config:
+6. Moce to /opt/flask_app folder.
+7. Moving the Flask app files in this directory so the app.py is there.
+8. Starting the Virtual Enviroment: sudo python3 -m venv venv
+9. Starting the Virtual Enviroment: source venv/bin/activate
+10. to be sure do sudo apt update
+11. If requirements.txt is avaliable: pip install -r requirements.txt
+12. If not already installed for PostgreSQL do: sudo apt install build-essential python3-dev libpq-dev -y
+13. if it was not in requirements.txt: pip install flask        and      pip install psycopg2       (also for PostgreSQL)
+14. Checking which packeges are installed: pip list
+15. Testing if the Webserver starts: python app.py
+16. Stay in the (venv)
+17. Installing gunicorn for WSGI HTTP server: pip install gunicorn
+18. Starting the Server:  gunicorn -w 5 -b 0.0.0.0:5000 app:app
+19. Website should now be reachable
+20. Exit Venv: deactivate
+21. Setting up Ngix:
+22. Installing Ngix: sudo apt install nginx -y
+23. Editing the Congfig: sudo nano /etc/nginx/sites-available/flask_app
+24.   Pasting Config:
 ```
 server {
     listen 80;
