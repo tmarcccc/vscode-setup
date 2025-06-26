@@ -103,7 +103,7 @@ WantedBy=multi-user.target
 
 
 
-#backend js
+# backend js
 1. cd /opt
 2. mkdir backend_task
 3. cd backend_task
@@ -130,4 +130,11 @@ WorkingDirectory=/opt/backend_task
 [Install]
 WantedBy=multi-user.target
 ```
-
+10. for dependencies:  sudo npm init -y
+11. installing some dependencies: sudo npm install dotenv pg
+12. checking if installed:  ls node_modules
+13. sudo systemctl daemon-reload
+14. sudo systemctl start backend.service
+15. checking the status:  sudo systemctl status backend.service
+16. see the logs with: sudo journalctl -u backend.service -f
+17. 
