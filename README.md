@@ -103,9 +103,31 @@ WantedBy=multi-user.target
 
 
 
-#backend python/js
+#backend js
 1. cd /opt
 2. mkdir backend_task
 3. cd backend_task
-4. Move Python File in this directory
-5. 
+4. Move js File in this directory   potenially use sudo nano /opt/backend_task/backend.js
+5. sudo apt update
+6. sudo apt install -y nodejs npm
+7. check if succesfull with node -v  and  npm -v
+8. make excecutable with  sudo chmod +x /opt/backend_task/backend.js
+9. Create a systemd service fiel with: sudo nano /etc/systemd/system/backend.service
+10. Paste the following:
+```
+[Unit]
+Description=Node.js Background Task
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/node /opt/backend_task/backend.js
+Restart=always
+User=marc
+Group=www-data
+Environment=NODE_ENV=production
+WorkingDirectory=/opt/backend_task
+
+[Install]
+WantedBy=multi-user.target
+```
+
