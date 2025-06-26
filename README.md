@@ -96,3 +96,16 @@ WantedBy=multi-user.target
 30. Check Status: sudo systemctl status flask_app
 31. Acces Website with IP or Domain to test.
 32. Finally using Certbot for https
+
+
+
+
+
+
+
+#backend python/js
+1. cd /opt
+2. mkdir backend_task
+3. cd backend_task
+4. Move Python File in this directory
+5. 
